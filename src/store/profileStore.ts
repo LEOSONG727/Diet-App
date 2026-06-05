@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import type { UserProfile, ActivityLevel, GoalType, Gender } from '../types';
+import type { UserProfile } from '../types';
 import { getProfile, saveProfile, updateProfileTarget } from '../db/queries/profile';
 import { computeCalorieTarget } from '../utils/bmrCalculator';
 import { generateId } from '../utils/dateUtils';
@@ -90,8 +90,3 @@ export const useProfileStore = create<ProfileState>((set, get) => ({
     set({ profile: { ...current, dailyCalorieTarget: target, isTargetManuallySet: false, updatedAt: Date.now() } });
   },
 }));
-
-// suppress unused import warnings
-void (null as unknown as ActivityLevel);
-void (null as unknown as GoalType);
-void (null as unknown as Gender);

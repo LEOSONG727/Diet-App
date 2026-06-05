@@ -42,7 +42,7 @@ export default function AddManualScreen() {
         userEdited: false,
       });
       router.back();
-    } catch (e) {
+    } catch {
       Alert.alert('오류', '저장 중 문제가 발생했습니다.');
     } finally {
       setIsSaving(false);

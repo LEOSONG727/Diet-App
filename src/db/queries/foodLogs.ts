@@ -1,6 +1,6 @@
 import { getDB } from '../client';
 import type { FoodLog, FoodLogCreateInput, MealType, ReferenceObjectType } from '../../types';
-import { generateId, getTodayString } from '../../utils/dateUtils';
+import { generateId } from '../../utils/dateUtils';
 
 interface FoodLogRow {
   id: string;
@@ -165,6 +165,3 @@ export async function getDailyCalorieSum(date: string): Promise<number> {
   );
   return row?.total ?? 0;
 }
-
-// suppress unused import warning
-void getTodayString;
