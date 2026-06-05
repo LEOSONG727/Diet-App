@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   View, Text, Image, TextInput, TouchableOpacity, ScrollView,
   StyleSheet, SafeAreaView, Alert,
@@ -40,8 +40,13 @@ export default function ResultScreen() {
     })),
   );
 
+  useEffect(() => {
+    if (!result || !imageUri) {
+      router.replace('/meal/camera');
+    }
+  }, [result, imageUri, router]);
+
   if (!result || !imageUri) {
-    router.replace('/meal/camera');
     return null;
   }
 

@@ -24,7 +24,7 @@ export default function CameraScreen() {
       return;
     }
     const picked = await ImagePicker.launchCameraAsync({
-      mediaTypes: ImagePicker.MediaTypeOptions.Images,
+      mediaTypes: 'images',
       quality: 0.8,
     });
     if (!picked.canceled && picked.assets[0]) {
@@ -41,7 +41,7 @@ export default function CameraScreen() {
       return;
     }
     const picked = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ImagePicker.MediaTypeOptions.Images,
+      mediaTypes: 'images',
       quality: 0.8,
     });
     if (!picked.canceled && picked.assets[0]) {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   View, Text, Image, TouchableOpacity, StyleSheet, SafeAreaView, ScrollView,
 } from 'react-native';
@@ -9,8 +9,13 @@ export default function PreviewScreen() {
   const router = useRouter();
   const { imageUri } = useAnalysisStore();
 
+  useEffect(() => {
+    if (!imageUri) {
+      router.replace('/meal/camera');
+    }
+  }, [imageUri, router]);
+
   if (!imageUri) {
-    router.replace('/meal/camera');
     return null;
   }
 
