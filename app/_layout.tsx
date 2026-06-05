@@ -62,6 +62,18 @@ function InitialLayout() {
           name="meal/camera"
           options={{ headerShown: true, title: '사진으로 기록', headerBackTitle: '' }}
         />
+        <Stack.Screen
+          name="meal/preview"
+          options={{ headerShown: true, title: '사진 확인', headerBackTitle: '' }}
+        />
+        <Stack.Screen
+          name="meal/analyzing"
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="meal/result"
+          options={{ headerShown: true, title: '분석 결과', headerBackTitle: '' }}
+        />
       </Stack>
     </>
   );
